@@ -11,6 +11,11 @@ namespace EmilySkelleyPortfolio.Controllers
             return View();
         }
 
+        public IActionResult Projects()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
