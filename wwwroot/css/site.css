@@ -15,10 +15,13 @@ html {
 html {
   position: relative;
   min-height: 100%;
+
 }
 
 body {
-  margin-bottom: 60px;
+    background-color: #000101;
+    margin-bottom: 60px;
+    color: #C8FFE7;
 }
 
 p {
