@@ -1,5 +1,31 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #212529;
+  --bg-secondary: #f8f9fa;
+  --border-color: #dee2e6;
+  --link-color: #0d6efd;
+  --navbar-bg: #f8f9fa;
+  --navbar-text: #212529;
+  --footer-text: #6c757d;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-color: #000101;
+  --text-color: #C8FFE7;
+  --bg-secondary: #1a1a1a;
+  --border-color: #2d2d2d;
+  --link-color: #6ea8fe;
+  --navbar-bg: #000000;
+  --navbar-text: #C8FFE7;
+  --footer-text: #C8FFE7;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+}
+
 html {
   font-size: 14px;
+  position: relative;
+  min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -12,16 +38,11 @@ html {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-
-}
-
 body {
-    background-color: #000101;
+    background-color: var(--bg-color);
     margin-bottom: 60px;
-    color: #C8FFE7;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 p {
@@ -29,14 +50,13 @@ p {
 }
 
 a {
-    color: var(--bs-primary-color);
+    color: var(--text-color);
     text-decoration: none;
 }
 
 div {
     text-align: center;
 }
-
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
@@ -45,4 +65,52 @@ div {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    min-height: 38px;
+}
+
+.theme-toggle:hover {
+    background-color: var(--bg-secondary);
+}
+
+.theme-toggle:focus {
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+}
+
+.navbar {
+    background-color: var(--navbar-bg) !important;
+    color: var(--navbar-text);
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand,
+.nav-link a,
+.navbar-nav .nav-link {
+    color: var(--navbar-text) !important;
+}
+
+.footer {
+    background-color: var(--bg-color);
+    color: var(--footer-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer .text-light,
+.footer .text-muted {
+    color: var(--footer-text) !important;
 }
